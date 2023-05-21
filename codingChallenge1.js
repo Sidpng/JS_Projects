@@ -1,21 +1,24 @@
 // comparing bmi of Mark and John
 
-weightMark = 55;
-weightJohn = 60;
+const weightMark = 150;
+const weightJohn = 60;
 
-heightMark = 5.5;
-heightJohn = 6;
+const heightMark = 5;
+const heightJohn = 4;
 
-let markHigherBMI = true;
+let markHigherBMI;
 
-bmiMark = weightMark/heightMark;
-bmiJohn = weightJohn/heightJohn;
+const bmiMark = (weightMark/heightMark).toPrecision(2);
+const bmiJohn = (weightJohn/heightJohn).toPrecision(2);
 
 if (bmiMark > bmiJohn) {
     markHigherBMI = true;
 }
 else if (bmiMark < bmiJohn) {
     markHigherBMI = false;
+}
+else {
+    alert("equal bmi");
 }
 
 alert(markHigherBMI);
