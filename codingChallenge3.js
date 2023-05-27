@@ -6,8 +6,8 @@ let teamKoalaScore1 = parseInt(prompt("Enter the score for the Koala team in fir
 let teamKoalaScore2 = parseInt(prompt("Enter the score for the Koala team in second match: "));
 let teamKoalaScore3 = parseInt(prompt("Enter the score for the Koala team in third match: "));
 
-let averageScoreTeamDolphin = (teamDolphinScore1 + teamDolphinScore2 + teamDolphinScore3) / 3;
-let averageScoreTeamKoala = (teamKoalaScore1 + teamKoalaScore2 + teamKoalaScore3) / 3;
+const averageScoreTeamDolphin = (teamDolphinScore1 + teamDolphinScore2 + teamDolphinScore3) / 3;
+const averageScoreTeamKoala = (teamKoalaScore1 + teamKoalaScore2 + teamKoalaScore3) / 3;
 
 if (averageScoreTeamDolphin > averageScoreTeamKoala && averageScoreTeamDolphin > 100) {
     alert("Team Dolphin wins! with a difference of: " + (averageScoreTeamDolphin - averageScoreTeamKoala));
