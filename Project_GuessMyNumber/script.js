@@ -1,6 +1,7 @@
 'use strict';
 
 let secretNumber = Math.trunc(Math.random() * 20);
+console.log(secretNumber);
 let score = 20;
 let highScore = 0;
 
@@ -23,34 +24,19 @@ document.querySelector('.check').addEventListener
                 document.querySelector('.highscore').textContent = highScore;
             }
         }
-
-        else if (guess < secretNumber) {
-            document.querySelector('.message').textContent = 'The Number is higher.';
-            if (score > 0) {
-                score -= 1;
+        else if (guess !== secretNumber) {
+            if (score > 1) {
+                document.querySelector('.message').textContent = guess < secretNumber
+                    ? 'The Number is higher.' : 'The Number is lower.';
+                score--;
                 document.querySelector('.score').textContent = score;
             }
             else {
                 document.querySelector('.message').textContent = 'Please reset the game';
-            }
-        }
-
-        else if (guess > secretNumber) {
-            document.querySelector('.message').textContent = 'The Number is lower.';
-            if (score > 0) {
-                score -= 1;
                 document.querySelector('.score').textContent = score;
             }
-            else {
-                document.querySelector('.message').textContent = 'Please reset the game';
-            }
         }
-
-        if (score === 0) {
-            document.querySelector('.message').textContent = 'Please reset the game by clicking Play Again button';
-        }
-
-    });      // add event listener to check when any click event happens and print the value entered in the input field into the console log
+    });
 
 document.querySelector('.again').addEventListener
     ('click', function () {
